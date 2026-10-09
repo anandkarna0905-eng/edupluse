@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11162b">
+  <meta name="description" content="EduWatch academic performance and early warning system. Clear insights and supportive next steps for students and faculty.">
+  <title>EduWatch | Student Success Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main id="landingPage" class="landing-page">
+    <nav class="landing-nav"><a class="brand landing-brand" href="#"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span>Edu<span class="brand-light">Watch</span><small>STUDENT SUCCESS PLATFORM</small></span></a><span class="landing-pill"><i class="bi bi-shield-check me-1"></i> Academic support, made visible</span></nav>
+    <section class="landing-hero container">
+      <div class="hero-copy"><div class="welcome-tag"><i class="bi bi-stars me-1"></i> ACADEMIC PERFORMANCE & EARLY WARNING SYSTEM</div><h1>Every student deserves<br><span>a chance to thrive.</span></h1><p>EduWatch helps students understand their academic progress and helps faculty identify where timely support can make a difference.</p><button id="openLoginChoices" class="btn btn-primary btn-lg hero-login"><i class="bi bi-box-arrow-in-right me-2"></i>Login to EduWatch <i class="bi bi-arrow-right ms-3"></i></button><div class="hero-note"><i class="bi bi-lock-fill me-1"></i> Access is checked against records stored in the EduWatch database.</div></div>
+      <div class="hero-visual"><div class="hero-orbit orbit-a"></div><div class="hero-orbit orbit-b"></div><div class="hero-card hero-card-main"><div class="hero-card-icon"><i class="bi bi-graph-up-arrow"></i></div><span>STUDENT SUCCESS</span><strong>Progress with purpose</strong><p>Clear insights. Helpful next steps.</p><div class="hero-bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:46%"></i><i style="height:73%"></i><i style="height:88%"></i><i style="height:100%"></i></div></div><div class="hero-float float-one"><i class="bi bi-check-circle-fill"></i><span><strong>Actionable plans</strong><small>Small steps, steady progress</small></span></div><div class="hero-float float-two"><i class="bi bi-heart-pulse-fill"></i><span><strong>Early support</strong><small>Help when it matters</small></span></div></div>
+    </section>
+    <section class="container landing-features"><div><span class="feature-icon"><i class="bi bi-person-check"></i></span><strong>Student view</strong><p>Review attendance, marks, risk indicators and suggested improvement plans.</p></div><div><span class="feature-icon"><i class="bi bi-people"></i></span><strong>Faculty workspace</strong><p>Manage student records, monitor risk levels and coordinate interventions.</p></div><div><span class="feature-icon"><i class="bi bi-lightbulb"></i></span><strong>Supportive insights</strong><p>Turn academic signals into practical, student-centred next steps.</p></div></section>
+    <footer class="landing-footer">EduWatch <span>•</span> Academic support through early awareness</footer>
+  </main>
+
+  <section id="loginPage" class="login-page d-none">
+    <button class="back-home" id="backToHome"><i class="bi bi-arrow-left me-2"></i>Back to home</button>
+    <div class="login-card"><div class="login-logo"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span></div><div class="welcome-tag justify-content-center">WELCOME TO EDUWATCH</div><h2 id="loginHeading">Choose your login</h2><p id="loginSubheading">Continue to your personalised EduWatch workspace.</p>
+      <div id="roleChoices" class="role-choices"><button class="role-card" data-role="student"><span class="role-icon student-role-icon"><i class="bi bi-person-badge"></i></span><span><strong>Student</strong><small>View your academic performance and support plans</small></span><i class="bi bi-arrow-right role-arrow"></i></button><button class="role-card" data-role="faculty"><span class="role-icon faculty-role-icon"><i class="bi bi-people"></i></span><span><strong>Faculty</strong><small>Manage student records and interventions</small></span><i class="bi bi-arrow-right role-arrow"></i></button></div>
+      <form id="loginForm" class="d-none"><label class="form-label" id="loginFieldLabel" for="loginIdentifier">Roll Number</label><div class="input-group login-input"><span class="input-group-text"><i class="bi bi-person-vcard"></i></span><input id="loginIdentifier" class="form-control" autocomplete="username" required maxlength="80" placeholder="Enter your roll number"></div><div id="loginError" class="login-error d-none" role="alert"></div><button id="loginSubmit" class="btn btn-primary w-100 mt-3" type="submit">Continue <i class="bi bi-arrow-right ms-2"></i></button><button type="button" id="changeRole" class="btn btn-link w-100 mt-2">Choose a different login type</button></form><div class="login-help"><i class="bi bi-info-circle me-1"></i> Use the ID that your faculty has added to EduWatch.</div>
+    </div>
+  </section>
+
+  <section id="studentWorkspace" class="student-workspace d-none">
+    <header class="student-topbar"><a class="brand" href="#"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span>Edu<span class="brand-light">Watch</span><small>STUDENT SUCCESS PLATFORM</small></span></a><button class="btn btn-outline-secondary btn-sm" id="studentLogout"><i class="bi bi-box-arrow-right me-1"></i>Logout</button></header>
+    <main class="container student-main"><div class="student-welcome"><div><div class="welcome-tag"><i class="bi bi-stars me-1"></i> YOUR LEARNING JOURNEY</div><h1>Hello, <span id="studentWelcomeName">Student</span> 👋</h1><p>Here is your current academic snapshot and a few steps to help you keep moving forward.</p></div><div class="student-id-chip"><i class="bi bi-person-vcard me-2"></i><span id="studentWelcomeId"></span></div></div>
+      <div class="row g-3 student-metric-row"><div class="col-12 col-md-4"><div class="student-metric"><span class="metric-symbol metric-purple"><i class="bi bi-calendar-check"></i></span><div><small>Attendance</small><strong id="studentAttendance">—</strong><span>Overall attendance</span></div></div></div><div class="col-12 col-md-4"><div class="student-metric"><span class="metric-symbol metric-blue"><i class="bi bi-journal-check"></i></span><div><small>Academic marks</small><strong id="studentMarks">—</strong><span>Current overall score</span></div></div></div><div class="col-12 col-md-4"><div class="student-metric"><span class="metric-symbol metric-amber"><i class="bi bi-activity"></i></span><div><small>Academic risk</small><strong id="studentRisk">—</strong><span id="studentRiskCaption">Based on current records</span></div></div></div></div>
+      <div class="row g-3 mt-1"><div class="col-lg-7"><section class="panel student-panel h-100"><div class="panel-heading"><div><h3>Your academic overview</h3><p>A simple summary of your current performance</p></div><span class="panel-icon"><i class="bi bi-bar-chart-line"></i></span></div><div class="performance-row"><div><span>Attendance</span><div class="student-progress"><i id="attendanceProgress"></i></div></div><strong id="attendanceProgressText">—</strong></div><div class="performance-row"><div><span>Marks</span><div class="student-progress blue-progress"><i id="marksProgress"></i></div></div><strong id="marksProgressText">—</strong></div><div class="student-detail-strip"><div><small>Department</small><strong id="studentDepartment">—</strong></div><div><small>Year of study</small><strong id="studentYear">—</strong></div></div><div class="risk-explanation" id="studentRiskExplanation"></div></section></div><div class="col-lg-5"><section class="panel student-panel h-100"><div class="panel-heading"><div><h3>Your suggested action plan</h3><p>Practical steps based on your current records</p></div><span class="panel-icon"><i class="bi bi-lightbulb"></i></span></div><div id="studentPlanList" class="student-plan-list"></div><p class="student-encouragement"><i class="bi bi-heart-fill me-2"></i>Your current results are a starting point, not a label. Ask your faculty advisor for help whenever you need it.</p></section></div></div>
+      <section class="panel student-panel mt-3"><div class="panel-heading"><div><h3>Faculty support plan</h3><p>Support actions recorded for you by your faculty</p></div><span class="panel-icon"><i class="bi bi-clipboard2-check"></i></span></div><div id="studentInterventions" class="student-interventions"><p class="text-secondary small mb-0">Loading your support plan…</p></div></section><div class="student-disclaimer"><i class="bi bi-info-circle me-1"></i> Risk indicators and suggestions are demo rules to guide supportive conversations. They are not a diagnosis or a final judgement about your ability.</div>
+    </main>
+  </section>
+
+  <div class="app-shell d-none" id="facultyWorkspace">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#"><span class="brand-mark"><i class="bi bi-mortarboard-fill"></i></span><span>Edu<span class="brand-light">Watch</span><small>STUDENT SUCCESS PLATFORM</small></span></a>
+      <div class="nav-caption">WORKSPACE</div>
+      <button class="nav-link active" data-view="dashboard"><i class="bi bi-grid-1x2-fill"></i> Overview</button>
+      <button class="nav-link" data-view="students"><i class="bi bi-people-fill"></i> Students</button>
+      <button class="nav-link" data-view="interventions"><i class="bi bi-clipboard2-check-fill"></i> Interventions</button>
+      <div class="sidebar-bottom"><div class="avatar">EW</div><div><strong>Academic Team</strong><small>Demo workspace</small></div></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="btn btn-light d-lg-none" id="menuToggle" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
+        <div><div class="eyebrow">ACADEMIC INTELLIGENCE</div><h1 id="pageTitle">Overview</h1></div>
+        <div class="topbar-right"><span class="live-dot"></span><span class="small text-secondary">Connected to API</span><button class="btn btn-primary" id="topAddStudent"><i class="bi bi-plus-lg me-2"></i>Add student</button></div>
+      </header>
+
+      <div id="alertArea" class="alert-area" aria-live="polite"></div>
+
+      <section class="view-section" id="dashboardView">
+        <div class="welcome-panel">
+          <div><div class="welcome-tag"><i class="bi bi-stars me-1"></i> STUDENT SUCCESS, PROACTIVELY</div><h2>See the signal.<br><span>Support the student.</span></h2><p>Spot academic risk early and turn insights into meaningful action.</p></div>
+          <div class="welcome-art"><i class="bi bi-mortarboard"></i><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+        </div>
+
+        <div class="row g-3 stats-row">
+          <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-top"><span>Total students</span><span class="stat-icon purple"><i class="bi bi-people"></i></span></div><div class="stat-value" id="totalStudents">0</div><div class="stat-foot">Records in your workspace</div></div></div>
+          <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-top"><span>High risk</span><span class="stat-icon red"><i class="bi bi-exclamation-triangle"></i></span></div><div class="stat-value" id="highRisk">0</div><div class="stat-foot">Priority follow-up needed</div></div></div>
+          <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-top"><span>Average attendance</span><span class="stat-icon blue"><i class="bi bi-calendar-check"></i></span></div><div class="stat-value" id="avgAttendance">—<small>%</small></div><div class="stat-foot">Across all students</div></div></div>
+          <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-top"><span>Open interventions</span><span class="stat-icon amber"><i class="bi bi-clipboard2-pulse"></i></span></div><div class="stat-value" id="openInterventions">0</div><div class="stat-foot">Planned or in progress</div></div></div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <div class="col-xl-7"><div class="panel h-100"><div class="panel-heading"><div><h3>Risk overview</h3><p>Students grouped by the current demo risk rules</p></div><span class="panel-icon"><i class="bi bi-bar-chart-line"></i></span></div><div id="riskChart" class="risk-chart"></div><div class="chart-legend"><span><i class="legend-dot low"></i>Low</span><span><i class="legend-dot medium"></i>Medium</span><span><i class="legend-dot high"></i>High</span></div></div></div>
+          <div class="col-xl-5"><div class="panel h-100"><div class="panel-heading"><div><h3>Suggested priorities</h3><p>Start with students who need attention</p></div><i class="bi bi-lightbulb panel-icon"></i></div><div id="priorityList" class="priority-list"></div></div></div>
+        </div>
+
+        <div class="panel mt-3"><div class="panel-heading"><div><h3>Students to check in on</h3><p>Highest-priority records based on the demo rules</p></div><button class="btn btn-outline-primary btn-sm" data-goto="students">View all students <i class="bi bi-arrow-right ms-1"></i></button></div><div class="table-responsive"><table class="table align-middle student-table"><thead><tr><th>STUDENT</th><th>DEPARTMENT</th><th>ATTENDANCE</th><th>MARKS</th><th>RISK</th><th></th></tr></thead><tbody id="priorityStudents"></tbody></table></div></div>
+      </section>
+
+      <section class="view-section d-none" id="studentsView">
+        <div class="section-intro"><div><h2>Student directory</h2><p>Manage records and review academic risk indicators.</p></div><button class="btn btn-primary" id="addStudentBtn"><i class="bi bi-plus-lg me-2"></i>Add student</button></div>
+        <div class="panel"><div class="filter-bar"><div class="search-box"><i class="bi bi-search"></i><input id="studentSearch" class="form-control" placeholder="Search name, ID or department..."></div><select id="riskFilter" class="form-select"><option value="">All risk levels</option><option>High</option><option>Medium</option><option>Low</option></select><button class="btn btn-outline-secondary" id="refreshStudents"><i class="bi bi-arrow-clockwise me-1"></i>Refresh</button></div><div class="table-responsive"><table class="table align-middle student-table"><thead><tr><th>STUDENT</th><th>DEPARTMENT</th><th>YEAR</th><th>ATTENDANCE</th><th>MARKS</th><th>RISK LEVEL</th><th>ACTIONS</th></tr></thead><tbody id="studentsTable"></tbody></table></div><div id="emptyStudents" class="empty-state d-none"><i class="bi bi-person-plus"></i><h4>No students found</h4><p>Add a student or change your search filters.</p></div></div>
+      </section>
+
+      <section class="view-section d-none" id="interventionsView">
+        <div class="section-intro"><div><h2>Intervention planner</h2><p>Plan supportive actions, track progress and follow up.</p></div></div>
+        <div class="row g-3">
+          <div class="col-lg-4"><div class="panel"><div class="panel-heading"><div><h3>Create an intervention</h3><p>Record a student support action</p></div></div><form id="interventionForm" class="form-stack"><div><label class="form-label" for="interventionStudent">Student</label><select id="interventionStudent" class="form-select" required><option value="">Select a student</option></select></div><div><label class="form-label" for="interventionTitle">Action title</label><input id="interventionTitle" class="form-control" required maxlength="120" placeholder="e.g. Maths tutoring session"></div><div><label class="form-label" for="interventionDescription">Description</label><textarea id="interventionDescription" class="form-control" rows="3" placeholder="What support will be offered?"></textarea></div><div><label class="form-label" for="interventionDueDate">Due date</label><input id="interventionDueDate" type="date" class="form-control"></div><button class="btn btn-primary w-100" type="submit"><i class="bi bi-plus-lg me-2"></i>Create intervention</button></form></div></div>
+          <div class="col-lg-8"><div class="panel"><div class="panel-heading"><div><h3>Intervention tracker</h3><p>Update status as support progresses</p></div><span class="badge text-bg-light" id="interventionCount">0 records</span></div><div id="interventionList" class="intervention-list"></div><div id="emptyInterventions" class="empty-state d-none"><i class="bi bi-clipboard-check"></i><h4>No interventions yet</h4><p>Create an intervention using the form.</p></div></div></div>
+        </div>
+      </section>
+
+      <footer class="footer-note">EduWatch <span>•</span> Academic support through early awareness <span class="ms-auto">Demo project · fictional/student-entered data</span></footer>
+    </main>
+  </div>
+
+  <div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="studentModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered"><div class="modal-content"><form id="studentForm"><div class="modal-header"><div><h5 class="modal-title" id="studentModalTitle">Add student</h5><p class="modal-subtitle mb-0">Enter the student's academic details.</p></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><input type="hidden" id="studentMongoId"><div class="row g-3"><div class="col-md-6"><label class="form-label" for="studentId">Student ID</label><input id="studentId" class="form-control" required maxlength="30" placeholder="e.g. STU-1001"></div><div class="col-md-6"><label class="form-label" for="studentName">Full name</label><input id="studentName" class="form-control" required maxlength="100" placeholder="Student name"></div><div class="col-md-6"><label class="form-label" for="department">Department</label><input id="department" class="form-control" required maxlength="80" placeholder="e.g. Computer Science"></div><div class="col-md-6"><label class="form-label" for="studentYear">Year of study</label><select id="studentYear" class="form-select" required><option value="1">Year 1</option><option value="2">Year 2</option><option value="3">Year 3</option><option value="4">Year 4</option></select></div><div class="col-md-6"><label class="form-label" for="attendance">Attendance (%)</label><input id="attendance" type="number" class="form-control" required min="0" max="100" step="0.1" placeholder="0–100"></div><div class="col-md-6"><label class="form-label" for="marks">Marks (out of 100)</label><input id="marks" type="number" class="form-control" required min="0" max="100" step="0.1" placeholder="0–100"></div><div class="col-12"><label class="form-label" for="studentNotes">Notes (optional)</label><textarea id="studentNotes" class="form-control" rows="2" maxlength="500" placeholder="Additional context for authorized staff"></textarea></div></div><div class="form-text mt-3">Risk levels are calculated from attendance and marks using simple demo thresholds.</div></div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button type="submit" class="btn btn-primary" id="saveStudentBtn">Save student</button></div></form></div></div>
+  </div>
+
+  <div class="modal fade" id="studentDetailModal" tabindex="-1" aria-labelledby="studentDetailTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><div><h5 class="modal-title" id="studentDetailTitle">Student details</h5><p class="modal-subtitle mb-0" id="studentDetailSubtitle"></p></div><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="studentDetailBody"></div><div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal">Close</button></div></div></div></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/students.js"></script>
+  <script src="/js/interventions.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/ui.js"></script>
+</body>
+</html>
